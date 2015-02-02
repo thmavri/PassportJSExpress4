@@ -1,0 +1,12 @@
+<% if (!user) { %>
+	<h2>Welcome! Please log in.</h2>
+	<a href="/auth/github">Login with GitHub</a> 
+<% } else { %>
+	<h2>Hello, <%= user.displayName %>.</h2>
+	<a href="/account">My info</a>
+	<p>ID: <%= user.id %></p>
+	<p>Username: <%= user.username %></p>
+	<p>Name: <%= user.displayName %></p>
+	<p>Email: <%= user.emails[0].value %></p>
+	<p><a href="/logout">Logout</a></p>
+<% } %>
